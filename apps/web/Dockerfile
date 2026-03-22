@@ -3,7 +3,7 @@ WORKDIR /app
 RUN corepack enable && corepack prepare pnpm@9 --activate
 
 # Copy monorepo root files
-COPY package.json pnpm-workspace.yaml turbo.json ./
+COPY package.json pnpm-workspace.yaml turbo.json .npmrc ./
 
 # Copy workspace packages (web depends on shared, ui-react, i18n, config)
 COPY packages/ ./packages/
