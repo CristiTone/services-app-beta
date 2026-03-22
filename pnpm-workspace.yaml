@@ -1,5 +1,0 @@
-# pnpm workspace definition - all apps and packages are linked here
-# Run pnpm install from root to install dependencies for the entire monorepo
-packages:
-  - "apps/*"
-  - "packages/*"
