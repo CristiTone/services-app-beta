@@ -3,6 +3,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "@/*": ["src/*"],
       "@marketplace/shared": ["../../packages/shared/src"],
       "@marketplace/shared/*": ["../../packages/shared/src/*"],
       "@marketplace/ui-react": ["../../packages/ui-react/src"],

@@ -2,8 +2,8 @@
 /**
  * Services list page - uses React island for the list (useServices hook + ServiceCard)
  */
-import Layout from '../../../layouts/Layout.astro';
-import ServicesList from '../../../components/ServicesList';
+import Layout from '@/layouts/Layout.astro';
+import ServicesList from '@/components/ServicesList';
 const { lang } = Astro.params;
 const locale = lang === 'ro' ? 'ro' : 'en';
 ---
