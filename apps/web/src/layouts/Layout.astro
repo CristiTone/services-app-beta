@@ -3,7 +3,7 @@
  * Base layout - i18n locale and API URL for client-side config
  */
 import '../styles/global.css';
-import ClientConfig from '../components/ClientConfig';
+import { ClientConfig } from '../components/ClientConfig';
 const { locale = 'en', title = 'Marketplace' } = Astro.props;
 const apiUrl = import.meta.env.PUBLIC_API_URL || 'http://localhost:3000';
 ---
