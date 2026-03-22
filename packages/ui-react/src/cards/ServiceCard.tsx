@@ -16,16 +16,26 @@ export interface ServiceCardProps {
 export function ServiceCard({ service, onPress, className = '' }: ServiceCardProps) {
   return (
     <View
-      className={`rounded-lg border border-slate-200 bg-white p-4 shadow-sm ${className}`}
+      className={`flex flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm ${className}`}
       onPress={onPress}
     >
-      <Text className="text-lg font-semibold text-slate-900">{service.title}</Text>
-      <Text className="mt-1 line-clamp-2 text-sm text-slate-600">
-        {service.description}
-      </Text>
-      <Text className="mt-2 text-base font-medium text-marketplace-primary">
-        {formatPrice(service.price)}
-      </Text>
+      <View className="h-1.5 w-full bg-gradient-to-r from-sky-400 to-sky-600" />
+      <View className="flex flex-1 flex-col p-5">
+        <Text className="text-base font-semibold leading-snug text-slate-900">
+          {service.title}
+        </Text>
+        <Text className="mt-2 line-clamp-2 flex-1 text-sm text-slate-500">
+          {service.description}
+        </Text>
+        <View className="mt-4 flex flex-row items-center justify-between">
+          <Text className="text-lg font-bold text-sky-600">
+            {formatPrice(service.price)}
+          </Text>
+          {service.provider && (
+            <Text className="text-xs text-slate-400">{service.provider.name}</Text>
+          )}
+        </View>
+      </View>
     </View>
   );
 }

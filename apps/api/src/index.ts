@@ -2,6 +2,7 @@
  * Marketplace API - Bun + Hono
  * Serves web and mobile clients; CORS enabled for both.
  */
+import 'dotenv/config';
 import { serve } from '@hono/node-server';
 import { Hono } from 'hono';
 import { cors } from 'hono/cors';
@@ -40,7 +41,8 @@ app.route('/api/services', servicesRoutes);
 app.route('/api/users', usersRoutes);
 
 // Protected routes (JWT placeholder - validate in real implementation)
-app.route('/api/bookings', authMiddleware, bookingsRoutes);
+app.use('/api/bookings/*', authMiddleware);
+app.route('/api/bookings', bookingsRoutes);
 
 const port = Number(process.env.PORT) || 3000;
 console.log(`API listening on http://localhost:${port}`);

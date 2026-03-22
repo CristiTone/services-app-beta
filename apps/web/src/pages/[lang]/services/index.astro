@@ -4,15 +4,66 @@
  */
 import Layout from '@/layouts/Layout.astro';
 import ServicesList from '@/components/ServicesList';
+
 const { lang } = Astro.params;
 const locale = lang === 'ro' ? 'ro' : 'en';
+
+const t = {
+  en: {
+    title: 'Services — Marketplace',
+    heading: 'Browse Services',
+    sub: 'Find the right professional for your project',
+    all: 'All Categories',
+    sort: 'Sort: Newest',
+  },
+  ro: {
+    title: 'Servicii — Marketplace',
+    heading: 'Răsfoiește Servicii',
+    sub: 'Găsește profesionistul potrivit pentru proiectul tău',
+    all: 'Toate Categoriile',
+    sort: 'Sortare: Cele mai noi',
+  },
+}[locale];
+
+const categories = locale === 'ro'
+  ? ['Instalații', 'Electricitate', 'Curățenie', 'Design', 'Programare', 'Fotografie', 'Grădinărit', 'Auto']
+  : ['Plumbing', 'Electrical', 'Cleaning', 'Design', 'Programming', 'Photography', 'Gardening', 'Automotive'];
 ---
-<Layout locale={locale} title="Services - Marketplace">
-  <h1 class="text-3xl font-bold text-slate-900">
-    {locale === 'ro' ? 'Servicii' : 'Services'}
-  </h1>
-  <p class="mt-1 text-slate-600">
-    {locale === 'ro' ? 'Găsiți un profesionist' : 'Find a professional'}
-  </p>
-  <ServicesList client:load locale={locale} />
+
+<Layout locale={locale} title={t.title} fullWidth>
+
+  <!-- Page header -->
+  <section class="border-b border-slate-200 bg-white px-4 py-10">
+    <div class="mx-auto max-w-6xl">
+      <nav class="mb-3 flex items-center gap-2 text-sm text-slate-400">
+        <a href={`/${locale}`} class="hover:text-slate-600">
+          {locale === 'ro' ? 'Acasă' : 'Home'}
+        </a>
+        <span>/</span>
+        <span class="text-slate-700">{locale === 'ro' ? 'Servicii' : 'Services'}</span>
+      </nav>
+      <h1 class="text-3xl font-bold text-slate-900">{t.heading}</h1>
+      <p class="mt-1 text-slate-500">{t.sub}</p>
+    </div>
+  </section>
+
+  <!-- Filters -->
+  <section class="sticky top-0 z-10 border-b border-slate-200 bg-white/90 px-4 py-3 backdrop-blur">
+    <div class="mx-auto flex max-w-6xl items-center gap-3 overflow-x-auto">
+      <button class="shrink-0 rounded-full bg-sky-600 px-4 py-1.5 text-sm font-medium text-white">
+        {t.all}
+      </button>
+      {categories.map((cat) => (
+        <button class="shrink-0 rounded-full border border-slate-200 px-4 py-1.5 text-sm font-medium text-slate-600 transition hover:border-sky-400 hover:text-sky-600">
+          {cat}
+        </button>
+      ))}
+    </div>
+  </section>
+
+  <!-- Services grid -->
+  <div class="mx-auto max-w-6xl px-4 py-8">
+    <ServicesList client:load locale={locale} />
+  </div>
+
 </Layout>
