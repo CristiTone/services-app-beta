@@ -1,0 +1,8 @@
+[phases.install]
+cmds = ["npm install"]
+
+[phases.build]
+cmds = ["npm -w apps/api run db:generate", "npm -w apps/api run build"]
+
+[start]
+cmd = "node apps/api/dist/index.js"
