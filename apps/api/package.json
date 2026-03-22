@@ -13,12 +13,12 @@
   },
   "dependencies": {
     "@hono/node-server": "^1.13.0",
-    "@marketplace/shared": "workspace:*",
+    "@marketplace/shared": "*",
     "@prisma/client": "^5.7.0",
     "hono": "^4.0.0"
   },
   "devDependencies": {
-    "@marketplace/config": "workspace:*",
+    "@marketplace/config": "*",
     "@types/node": "^20.0.0",
     "prisma": "^5.7.0",
     "tsup": "^8.0.0",

@@ -13,10 +13,10 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@marketplace/shared": "workspace:*"
+    "@marketplace/shared": "*"
   },
   "devDependencies": {
-    "@marketplace/config": "workspace:*",
+    "@marketplace/config": "*",
     "@types/react": "^18.2.0",
     "react": "^18.2.0",
     "react-native": "^0.73.0",

@@ -11,10 +11,13 @@
     "db:generate": "turbo run db:generate --filter=@marketplace/api",
     "db:push": "turbo run db:push --filter=@marketplace/api"
   },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "devDependencies": {
     "turbo": "^2.3.0"
   },
-  "packageManager": "pnpm@9.14.2",
   "engines": {
     "node": ">=18"
   }

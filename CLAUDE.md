@@ -4,28 +4,28 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-Turborepo monorepo for a Fiverr-style services marketplace. Runs on pnpm workspaces with three apps and four shared packages targeting ~70-80% code sharing between web and mobile.
+Turborepo monorepo for a Fiverr-style services marketplace. Runs on npm workspaces with three apps and four shared packages targeting ~70-80% code sharing between web and mobile.
 
 ## Commands
 
 ```bash
 # Development (from root)
-pnpm dev              # All apps
-pnpm dev:web          # Web only (Astro, port 4321)
-pnpm dev:api          # API only (Bun/Hono, port 3000)
-pnpm dev:mobile       # Mobile only (Expo)
+npm run dev              # All apps
+npm run dev:web          # Web only (Astro, port 4321)
+npm run dev:api          # API only (Bun/Hono, port 3000)
+npm run dev:mobile       # Mobile only (Expo)
 
 # Build & Type Check
-pnpm build
-pnpm typecheck
+npm run build
+npm run typecheck
 
 # Database (runs against apps/api)
-pnpm db:generate      # Generate Prisma client
-pnpm db:push          # Push schema to DB
+npm run db:generate      # Generate Prisma client
+npm run db:push          # Push schema to DB
 turbo run db:studio --filter=@marketplace/api  # Prisma Studio
 ```
 
-**Package manager:** pnpm 9.14.2. Do not use npm or yarn.
+**Package manager:** npm. Do not use pnpm or yarn.
 **API runtime:** Bun (not Node). API scripts use `bun run`.
 
 ## Monorepo Structure

@@ -20,7 +20,7 @@
     "zustand": "^4.5.0"
   },
   "devDependencies": {
-    "@marketplace/config": "workspace:*",
+    "@marketplace/config": "*",
     "typescript": "^5.3.0"
   },
   "peerDependencies": {
