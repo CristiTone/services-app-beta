@@ -1,0 +1,2 @@
+- [project_state.md](project_state.md) — Current implementation state: what's built vs stubbed, immediate next steps
+- [project_overview.md](project_overview.md) — Project goals, target market, business model, launch strategy

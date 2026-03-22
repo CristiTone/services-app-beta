@@ -1,0 +1,29 @@
+{
+  "common": {
+    "welcome": "Bine ați venit pe piață",
+    "loading": "Se încarcă...",
+    "error": "Ceva nu a mers bine",
+    "retry": "Încercați din nou"
+  },
+  "services": {
+    "title": "Servicii",
+    "listTitle": "Găsiți un profesionist",
+    "detail": "Detalii serviciu",
+    "price": "Preț",
+    "book": "Rezervați acum"
+  },
+  "booking": {
+    "confirm": "Confirmați rezervarea",
+    "date": "Data",
+    "status": "Status",
+    "pending": "În așteptare",
+    "confirmed": "Confirmat",
+    "completed": "Finalizat",
+    "cancelled": "Anulat"
+  },
+  "nav": {
+    "home": "Acasă",
+    "services": "Servicii",
+    "profile": "Profil"
+  }
+}

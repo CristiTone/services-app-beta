@@ -1,0 +1,29 @@
+{
+  "common": {
+    "welcome": "Welcome to the marketplace",
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "retry": "Retry"
+  },
+  "services": {
+    "title": "Services",
+    "listTitle": "Find a professional",
+    "detail": "Service details",
+    "price": "Price",
+    "book": "Book now"
+  },
+  "booking": {
+    "confirm": "Confirm booking",
+    "date": "Date",
+    "status": "Status",
+    "pending": "Pending",
+    "confirmed": "Confirmed",
+    "completed": "Completed",
+    "cancelled": "Cancelled"
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "profile": "Profile"
+  }
+}

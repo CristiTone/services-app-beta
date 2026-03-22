@@ -1,0 +1,24 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": [".env", ".env.*"],
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": [".astro/**", "dist/**", ".expo/**", "build/**"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "typecheck": {
+      "dependsOn": ["^build"],
+      "outputs": []
+    },
+    "db:generate": {
+      "outputs": ["node_modules/.prisma/**"]
+    },
+    "db:push": {
+      "dependsOn": ["db:generate"]
+    }
+  }
+}

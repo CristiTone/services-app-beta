@@ -1,0 +1,19 @@
+{
+  "expo": {
+    "name": "Marketplace",
+    "slug": "marketplace",
+    "version": "1.0.0",
+    "scheme": "marketplace",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.marketplace.app"
+    },
+    "android": {
+      "package": "com.marketplace.app"
+    },
+    "plugins": ["expo-router"]
+  }
+}

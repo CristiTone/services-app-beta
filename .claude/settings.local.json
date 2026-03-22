@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /Users/ctone/dev/personal/my-marketplace -maxdepth 3 -name tsconfig.json -o -name astro.config.* -o -name next.config.*)",
+      "Bash(find /Users/ctone/dev/personal/my-marketplace -maxdepth 3 -name tailwind.config.* -o -name .env*)",
+      "Bash(find /Users/ctone/dev/personal/my-marketplace/apps/mobile/src -type f -name *.tsx -o -name *.ts)",
+      "Bash(find /Users/ctone/dev/personal/my-marketplace/apps/mobile -maxdepth 3 -type f \\\\\\(-name *.ts -o -name *.tsx -o -name app.json -o -name *.config.* \\\\\\))",
+      "Bash(find /Users/ctone/dev/personal/my-marketplace/packages/ui-react/src -type f -name *.ts -o -name *.tsx)",
+      "Bash(find /Users/ctone/dev/personal/my-marketplace/apps/mobile -type f \\\\\\(-name *.ts -o -name *.tsx \\\\\\))"
+    ]
+  }
+}

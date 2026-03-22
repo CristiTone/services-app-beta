@@ -1,0 +1,18 @@
+---
+/**
+ * Services list page - uses React island for the list (useServices hook + ServiceCard)
+ */
+import Layout from '../../../layouts/Layout.astro';
+import ServicesList from '../../../components/ServicesList';
+const { lang } = Astro.params;
+const locale = lang === 'ro' ? 'ro' : 'en';
+---
+<Layout locale={locale} title="Services - Marketplace">
+  <h1 class="text-3xl font-bold text-slate-900">
+    {locale === 'ro' ? 'Servicii' : 'Services'}
+  </h1>
+  <p class="mt-1 text-slate-600">
+    {locale === 'ro' ? 'Găsiți un profesionist' : 'Find a professional'}
+  </p>
+  <ServicesList client:load locale={locale} />
+</Layout>

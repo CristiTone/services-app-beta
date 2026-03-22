@@ -1,0 +1,43 @@
+# Dependencies
+node_modules
+.pnpm-store
+
+# Build outputs
+dist
+.astro
+.expo
+build
+*.tsbuildinfo
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.idea
+.vscode
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Turbo
+.turbo
+
+# Prisma
+prisma/migrations/**/migration_lock.toml
+
+# Expo
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision

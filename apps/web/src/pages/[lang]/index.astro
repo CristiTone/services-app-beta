@@ -1,0 +1,24 @@
+---
+/**
+ * Home page with locale: /en or /ro
+ */
+import Layout from '../../layouts/Layout.astro';
+const { lang } = Astro.params;
+const locale = lang === 'ro' ? 'ro' : 'en';
+---
+<Layout locale={locale} title="Marketplace - Home">
+  <h1 class="text-3xl font-bold text-slate-900">
+    {locale === 'ro' ? 'Bine ați venit' : 'Welcome to the Marketplace'}
+  </h1>
+  <p class="mt-2 text-slate-600">
+    {locale === 'ro'
+      ? 'Găsiți instalatori, electricieni, tehnicieni și multe altele.'
+      : 'Find plumbers, electricians, nail technicians, and more.'}
+  </p>
+  <a
+    href={`/${locale}/services`}
+    class="mt-4 inline-block rounded-lg bg-marketplace-primary px-4 py-2 font-medium text-white"
+  >
+    {locale === 'ro' ? 'Servicii' : 'Browse services'}
+  </a>
+</Layout>
