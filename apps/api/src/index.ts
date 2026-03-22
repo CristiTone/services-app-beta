@@ -13,10 +13,19 @@ import { authMiddleware } from './middleware/auth';
 const app = new Hono();
 
 app.use('*', logger());
+const allowedOrigins: (string | RegExp)[] = [
+  'http://localhost:4321',
+  'http://localhost:8080',
+  /^https?:\/\/localhost/,
+];
+if (process.env.CORS_ORIGIN) {
+  allowedOrigins.push(...process.env.CORS_ORIGIN.split(',').map((o) => o.trim()));
+}
+
 app.use(
   '*',
   cors({
-    origin: ['http://localhost:4321', 'http://localhost:8080', /^https?:\/\/localhost/],
+    origin: allowedOrigins,
     allowMethods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowHeaders: ['Content-Type', 'Authorization'],
   })
