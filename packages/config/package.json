@@ -5,6 +5,7 @@
   "exports": {
     "./tailwind": "./tailwind.config.ts",
     "./tailwind-base": "./tailwind-base.js",
+    "./tailwind-base.js": "./tailwind-base.js",
     "./typescript/base.json": "./typescript/base.json",
     "./typescript/react.json": "./typescript/react.json",
     "./typescript/node.json": "./typescript/node.json"
