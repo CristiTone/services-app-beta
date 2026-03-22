@@ -1,11 +1,8 @@
-[phases.setup]
-nixPkgs = ["bun"]
-
 [phases.install]
-cmds = ["bun install"]
+cmds = ["npm install"]
 
 [phases.build]
-cmds = ["bunx prisma generate", "bun build src/index.ts --outdir=dist --target=bun"]
+cmds = ["npm run db:generate", "npm run build"]
 
 [start]
-cmd = "bun run dist/index.js"
+cmd = "node dist/index.js"
