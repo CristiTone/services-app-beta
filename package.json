@@ -2,7 +2,7 @@
   "name": "my-marketplace",
   "private": true,
   "scripts": {
-    "dev": "turbo run dev",
+    "dev": "turbo run dev --filter=@marketplace/web --filter=@marketplace/api",
     "dev:web": "turbo run dev --filter=@marketplace/web",
     "dev:mobile": "turbo run dev --filter=@marketplace/mobile",
     "dev:api": "turbo run dev --filter=@marketplace/api",
