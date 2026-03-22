@@ -2,6 +2,7 @@
  * Marketplace API - Bun + Hono
  * Serves web and mobile clients; CORS enabled for both.
  */
+import { serve } from '@hono/node-server';
 import { Hono } from 'hono';
 import { cors } from 'hono/cors';
 import { logger } from 'hono/logger';
@@ -43,7 +44,4 @@ app.route('/api/bookings', authMiddleware, bookingsRoutes);
 
 const port = Number(process.env.PORT) || 3000;
 console.log(`API listening on http://localhost:${port}`);
-export default {
-  port,
-  fetch: app.fetch,
-};
+serve({ fetch: app.fetch, port });

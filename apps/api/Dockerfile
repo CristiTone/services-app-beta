@@ -1,5 +1,6 @@
-FROM oven/bun:1 AS base
+FROM node:20-slim AS base
 WORKDIR /app
+RUN corepack enable && corepack prepare pnpm@9 --activate
 
 # Copy monorepo root files
 COPY package.json pnpm-workspace.yaml turbo.json ./
@@ -9,14 +10,12 @@ COPY packages/ ./packages/
 COPY apps/api/ ./apps/api/
 
 # Install all workspace dependencies
-RUN bun install
+RUN pnpm install
 
-# Generate Prisma client
+# Generate Prisma client and build
 WORKDIR /app/apps/api
-RUN bunx prisma generate
-
-# Build
-RUN bun run build
+RUN pnpm db:generate
+RUN pnpm build
 
 EXPOSE 3000
-CMD ["bun", "run", "start"]
+CMD ["pnpm", "start"]
