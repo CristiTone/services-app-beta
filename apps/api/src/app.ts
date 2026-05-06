@@ -28,6 +28,14 @@ app.use(
   })
 );
 
+app.onError((err, c) => {
+  console.error(err);
+  const origin = c.req.header('origin') ?? '';
+  if (origin) c.header('Access-Control-Allow-Origin', origin);
+  c.header('Vary', 'Origin');
+  return c.json({ message: 'Internal server error' }, 500);
+});
+
 app.get('/health', (c) => c.json({ ok: true }));
 
 app.route('/api/services', servicesRoutes);
