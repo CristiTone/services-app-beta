@@ -20,7 +20,10 @@ const apiUrl = import.meta.env.PUBLIC_API_URL || 'http://localhost:3000';
       <div class="mx-auto flex max-w-6xl items-center gap-4">
         <a href={`/${locale}`} class="font-semibold text-marketplace-primary">Marketplace</a>
         <a href={`/${locale}/services`} class="text-slate-600 hover:text-slate-900">Services</a>
-        <div class="ml-auto flex gap-2">
+        <div class="ml-auto flex items-center gap-4">
+          <a href={`/${locale}/login`} class="text-sm font-medium text-slate-600 hover:text-slate-900">
+            {locale === 'ro' ? 'Conectare' : 'Sign in'}
+          </a>
           <a href="/en" class={locale === 'en' ? 'font-medium' : 'text-slate-500'}>EN</a>
           <span class="text-slate-300">|</span>
           <a href="/ro" class={locale === 'ro' ? 'font-medium' : 'text-slate-500'}>RO</a>

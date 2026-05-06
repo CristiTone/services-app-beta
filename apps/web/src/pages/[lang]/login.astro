@@ -1,0 +1,16 @@
+---
+/**
+ * Login page — /en/login or /ro/login
+ */
+import Layout from '@/layouts/Layout.astro';
+import { LoginForm } from '@/components/LoginForm';
+
+const { lang } = Astro.params;
+const locale = lang === 'ro' ? 'ro' : 'en';
+
+const title = locale === 'ro' ? 'Conectare — Marketplace' : 'Sign In — Marketplace';
+---
+
+<Layout locale={locale} title={title}>
+  <LoginForm client:only="react" locale={locale} />
+</Layout>
