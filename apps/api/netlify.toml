@@ -1,6 +1,6 @@
 [build]
-  command = "npm install && npm run db:generate --workspace=apps/api && npm run db:push --workspace=apps/api"
-  functions = "netlify/functions"
+  command = "npm install && npm run db:generate --workspace=apps/api"
+  functions = "apps/api/netlify/functions"
 
 [build.environment]
   NODE_VERSION = "20"
