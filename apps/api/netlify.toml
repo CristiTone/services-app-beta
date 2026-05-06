@@ -1,5 +1,5 @@
 [build]
-  command = "cd ../.. && npm install && npm run db:generate --workspace=apps/api && npm run db:push --workspace=apps/api"
+  command = "npm install && npm run db:generate --workspace=apps/api && npm run db:push --workspace=apps/api"
   functions = "netlify/functions"
 
 [build.environment]
