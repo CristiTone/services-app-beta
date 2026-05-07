@@ -10,19 +10,26 @@ const app = new Hono();
 
 app.use('*', logger());
 
-const staticOrigins = ['http://localhost:4321', 'http://localhost:8080'];
-if (process.env.CORS_ORIGIN) {
-  staticOrigins.push(...process.env.CORS_ORIGIN.split(',').map((o) => o.trim()));
-}
-
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// WARNING: CORS IS WIDE OPEN — ALL ORIGINS ARE ALLOWED
+// THIS IS A TEMPORARY DEVELOPMENT SHORTCUT AND MUST BE REPLACED BEFORE GO-LIVE.
+//
+// What needs to happen before production:
+//   1. Restore origin allowlist: localhost + the production web domain (e.g.
+//      https://my-marketplace.netlify.app or your custom domain).
+//   2. Populate CORS_ORIGIN in the production environment with any additional
+//      origins that should be allowed (comma-separated).
+//   3. Remove the wildcard `origin: '*'` below and bring back the
+//      origin callback that was here before.
+//
+// Leaving CORS wide open in production allows ANY website to make
+// credentialed requests to this API on behalf of your logged-in users,
+// which is a serious security vulnerability.
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 app.use(
   '*',
   cors({
-    origin: (origin) => {
-      if (!origin) return null;
-      if (/^https?:\/\/localhost/.test(origin)) return origin;
-      return staticOrigins.includes(origin) ? origin : null;
-    },
+    origin: '*',
     allowMethods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowHeaders: ['Content-Type', 'Authorization'],
   })
