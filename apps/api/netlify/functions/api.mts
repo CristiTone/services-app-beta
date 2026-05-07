@@ -14,6 +14,3 @@ export default async (req: Request, _context: Context): Promise<Response> => {
   return app.fetch(req);
 };
 
-export const config: Config = {
-  path: ['/api/*', '/health'],
-};
